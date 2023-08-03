@@ -26,13 +26,13 @@ Resolution enumFromString<T>(String key) => Resolution.values
 Size iOSImageSizeFromResolution(Resolution resolution) {
   switch (resolution) {
     case Resolution.low:
-      return const Size(640, 480);
+      return const Size(2732, 2048);
     case Resolution.medium:
-      return const Size(640, 480);
+      return const Size(2732, 2048);
 
     case Resolution.high:
-      return const Size(1280, 720);
+      return const Size(2732, 2048);
     case Resolution.veryHigh:
-      return const Size(1920, 1080);
+      return const Size(2732, 2048);
   }
 }
