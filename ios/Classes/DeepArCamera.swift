@@ -100,8 +100,8 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
         switch call.method{
         case "switch_effect":
             let effect:String = args?["effect"] as! String
-            let key = registrar?.lookupKey(forAsset: effect)
-            let path = Bundle.main.path(forResource: key, ofType: nil)
+            // let key = registrar?.lookupKey(forAsset: effect)
+            // let path = Bundle.main.path(forResource: key, ofType: nil)
             deepAR.switchEffect(withSlot: "effect", path: path)
             result("switchEffect called successfully")
             
@@ -340,13 +340,13 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
     func resolutionForPictureQuality (pictureQuality: PictureQuality) -> CGSize {
         switch pictureQuality {
         case .low:
-            return CGSize(width: 640, height: 480);
+            return CGSize(width: 2048, height: 2732);
         case .medium:
-            return CGSize(width: 640, height: 480);
+            return CGSize(width: 2048, height: 2732);
         case .high:
-            return CGSize(width: 1280, height: 720);
+            return CGSize(width: 2048, height: 2732);
         case .veryHigh:
-            return CGSize(width: 1920, height: 1080);
+            return CGSize(width: 2048, height: 2732);
         }
     }
     
