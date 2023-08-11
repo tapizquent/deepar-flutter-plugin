@@ -102,7 +102,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
             let effect:String = args?["effect"] as! String
             // let key = registrar?.lookupKey(forAsset: effect)
             // let path = Bundle.main.path(forResource: key, ofType: nil)
-            deepAR.switchEffect(withSlot: "effect", path: path)
+            deepAR.switchEffect(withSlot: "effect", path: effect)
             result("switchEffect called successfully")
             
         case "switch_face_mask":
