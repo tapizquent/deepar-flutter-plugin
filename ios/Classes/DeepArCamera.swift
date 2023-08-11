@@ -141,7 +141,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
             finishRecordingVideo();
             result("STOPPING_RECORDING");
         case "get_resolution":
-            result(String(1280) + " " + String(720));
+            result(String(2732) + " " + String(2048));
         case "take_screenshot":
             deepAR.takeScreenshot()
             result("SCREENSHOT_TRIGGERED");
