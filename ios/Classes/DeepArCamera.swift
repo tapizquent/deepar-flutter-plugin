@@ -207,7 +207,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
             
         case "destroy":
             cameraController.stopCamera()
-            deepAR.shutdown()
+            deepAR?.shutdown()
             result("SHUTDOWN");
         default:
             result("No platform method found")
