@@ -141,7 +141,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
             finishRecordingVideo();
             result("STOPPING_RECORDING");
         case "get_resolution":
-            result(String(2732) + " " + String(2048));
+            result(String(1280) + " " + String(720));
         case "take_screenshot":
             deepAR.takeScreenshot()
             result("SCREENSHOT_TRIGGERED");
@@ -340,13 +340,13 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
     func resolutionForPictureQuality (pictureQuality: PictureQuality) -> CGSize {
         switch pictureQuality {
         case .low:
-            return CGSize(width: 2048, height: 2732);
+            return CGSize(width: 640, height: 480);
         case .medium:
-            return CGSize(width: 2048, height: 2732);
+            return CGSize(width: 640, height: 480);
         case .high:
-            return CGSize(width: 2048, height: 2732);
+            return CGSize(width: 1280, height: 720);
         case .veryHigh:
-            return CGSize(width: 2048, height: 2732);
+            return CGSize(width: 1920, height: 1080);
         }
     }
     
