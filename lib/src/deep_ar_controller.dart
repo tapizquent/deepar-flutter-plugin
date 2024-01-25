@@ -335,6 +335,7 @@ class DeepArController {
         iOSFunction: () => _deepArPlatformHandler.destroyIos(_textureId!));
   }
 
+  /// Apply mirror effect to the camera preview
   Future<void> applyMirrorEffect() async {
     await platformRun(
         androidFunction: Future.value,
