@@ -207,7 +207,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
             
         case "destroy":
             cameraController.stopCamera()
-            deepAR?.shutdown()
+            deepAR.shutdown()
             result("SHUTDOWN");
         default:
             result("No platform method found")
@@ -235,7 +235,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
         deepAR.changeLiveMode(true);
         
         self.arView = self.deepAR.createARView(withFrame: self.frame) as? ARView
-        cameraController.startCamera()
+        cameraController.startCamera(mirror: false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
