@@ -335,6 +335,13 @@ class DeepArController {
         iOSFunction: () => _deepArPlatformHandler.destroyIos(_textureId!));
   }
 
+  Future<void> applyMirrorEffect() async {
+    await platformRun(
+        androidFunction: Future.value,
+        iOSFunction: () =>
+            _deepArPlatformHandler.applyMirrorEffectIos(_textureId!));
+  }
+
   ///Listen to native delegate methods
   void _setNativeListenerIos() {
     try {

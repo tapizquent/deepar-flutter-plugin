@@ -247,6 +247,10 @@ class DeepArPlatformHandler {
     return _avCameraChannel(view).invokeMethod<String?>("destroy");
   }
 
+  Future<void> applyMirrorEffectIos(int view) async {
+    await _avCameraChannel(view).invokeMethod('applyMirrorEffect');
+  }
+
   Future<void> switchEffectWithSlot(
       {required String slot,
       required String path,

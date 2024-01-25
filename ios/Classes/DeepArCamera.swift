@@ -209,10 +209,23 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
             cameraController.stopCamera()
             deepAR.shutdown()
             result("SHUTDOWN");
+        case "applyMirrorEffect":
+            applyMirrorEffect()
+            result("Mirror effect applied")
         default:
             result("No platform method found")
         }
         
+    }
+
+    func applyMirrorEffect() {
+        // Check if the ARView is already mirrored, and if so, reset to default
+        if arView.transform == CGAffineTransform(scaleX: -1, y: 1) {
+            arView.transform = CGAffineTransform.identity
+        } else {
+            // Apply a horizontal mirror transformation
+            arView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
     }
     
     func view() -> UIView {
@@ -235,7 +248,7 @@ class DeepARCameraView: NSObject, FlutterPlatformView, DeepARDelegate {
         deepAR.changeLiveMode(true);
         
         self.arView = self.deepAR.createARView(withFrame: self.frame) as? ARView
-        cameraController.startCamera(mirror: false)
+        cameraController.startCamera()
         
         NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
